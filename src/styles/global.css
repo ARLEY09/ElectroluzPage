@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --default-font-family: "Outfit", sans-serif;
+
+  --color-orange-50: #fff9ed;
+  --color-orange-100: #fff2d4;
+  --color-orange-200: #ffe1a8;
+  --color-orange-300: #ffca70;
+  --color-orange-400: #ffa937;
+  --color-orange-500: #ff8904;
+  --color-orange-600: #f07206;
+  --color-orange-700: #c75607;
+  --color-orange-800: #9e430e;
+  --color-orange-900: #7f390f;
+  --color-orange-950: #451b05;
+
+  --color-gray-50: #f3f7f8;
+  --color-gray-100: #e0e9ed;
+  --color-gray-200: #c5d5dc;
+  --color-gray-300: #9db7c3;
+  --color-gray-400: #6d91a3;
+  --color-gray-500: #527588;
+  --color-gray-600: #476173;
+  --color-gray-700: #3c4f5d;
+  --color-gray-800: #384652;
+  --color-gray-900: #323d47;
+  --color-gray-950: #1e262e;
+}
+
+/**********UTILIDADES**********/
+
+@utility el-icon {
+  content: '';
+  background: url('@/assets/logo.svg') no-repeat center center;
+  background-size: var(--icon-size);
+  width: var(--icon-size);
+  height: var(--icon-size);
+  display: block;
+  margin-inline: auto;
+
+}
+
+
+
+/************ MAPA *************/
+
+
+
+#map-footer {
+  width: 600px;
+  /* Fuerza al iframe a llenar el contenedor */
+  height: 300px;
+  /* Altura fija inicial */
+  border: 0;
+}
+
+/* Ajuste específico para móviles */
+@media (max-width: 600px) {
+  #map-footer {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+
+/************ WHATSAPP *************/
+
+.float-wa {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  z-index: 100;
+}

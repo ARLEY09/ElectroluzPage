@@ -1,0 +1,37 @@
+---
+import Logo from "@/assets/logo.svg";
+import MainNav from "./MainNav.astro";
+
+interface Props {
+    bgImage: string;
+    subtitle: string;
+}
+
+const { bgImage, subtitle } = Astro.props;
+---
+
+<header class="min-h-72 max-h-840 relative pb-30">
+    <div
+        class="absolute inset-0 bg-cover bg-center"
+        style={`background-image: url(${bgImage})`}
+    >
+    </div>
+    <div class="absolute inset-0 bg-black/60"></div>
+    <h1>Header</h1>
+
+    <div
+        class="relative max-w-7xl mx-auto py-3"
+    >
+        <div class="flex flex-col lg:flex-row justify-between items-center gap-3">
+            <a href="/" class="flex items-center">
+                <Logo class="w-72 h-60" />
+            </a>
+
+            <MainNav class="3xl"/>
+        </div>
+
+        <h1 class="text-3xl text-white font-bold uppercase text-center mt-10 mb-10">
+            {subtitle}
+        </h1>
+    </div>
+</header>

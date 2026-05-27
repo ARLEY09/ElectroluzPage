@@ -1,0 +1,36 @@
+---
+import FooterBox from "../components/FooterBox.astro";
+---
+
+<footer class="bg-gray-800 text-gray-200 pt20">
+    <div class="grid grid-cols-1 max-w-7lg md:grid-cols-2 gap-10 items-center max-w-7xl mx-auto">
+        <div
+            class="max-w-7xl min-h-[300px] mx-auto mt-10 grid grid-cols-1 min-w-[80%] md:grid-cols-2 gap-10"
+        >
+            <FooterBox
+                heading="Contacto"
+            >
+                <p>Teléfono: +57 317 4353902</p>
+                <p>Email: admin.electroluz2@gmail.com</p>
+                <p>Dirección: Calle 1 #69-37</p>
+                <p>Diagonal al Centro Comercial EXITO</p>
+            </FooterBox>
+            <FooterBox
+                heading="Horario"
+            >
+                <p>Lunes a Viernes: 7:00 AM - 5:00 PM</p>
+                <p>Sábado: 8:00 AM - 12:30 PM</p>
+                <p>Festivos: 7:00 AM - 1:00 PM</p>
+            </FooterBox>
+        </div>
+        <div class="max-w-7xl mx-auto mt-10 rounded-lg overflow-hidden min-w-[80%]">
+            <iframe id="map-footer" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.7308064429026!2d-76.99841702429929!3d3.8678184483131757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e373b825a348a07%3A0x3a65238dd5b65695!2sElectroluz%20Valle!5e0!3m2!1ses!2sco!4v1779412058686!5m2!1ses!2sco" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <p class="text-center text-gray-400 mt-10 pb-5">
+        Todos los derechos reservados. Arley Lema &copy; {
+            new Date().getFullYear()
+        }
+    </p>
+</footer>

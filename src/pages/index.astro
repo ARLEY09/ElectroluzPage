@@ -1,11 +1,73 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import Logo from "@/assets/logo.svg";
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import bg from '../assets/bg-home.jpg';
+import Marcas from "@/components/Marcas.astro";
+import Gallery from "@/components/Gallery.astro"; 
 ---
 
-<Layout>
-	<Welcome />
+
+<Layout
+    title='Inicio'
+    bgImage={bg.src}
+    subtitle='10 AÑOS BRINDANDO EL MEJOR SERVICIO EN PRODUCTOS ELÉCTRICOS'
+>
+
+<h2 class="text-center text-orange-400 text-lg font-black uppercase">
+    conocer más 
+    <span class="block text-orange-500 text-3xl mt-3">sobre nosotros</span>
+</h2>
+<Logo class="w-24 h-24 mx-auto mt-3 hover:scale-105 transition-transform duration-300" />
+
+<p class="text-center text-gray-700 text-lg mt-5 max-w-7xl mx-auto">
+    Somos una empresa con 10 años dedicada a ofrecer productos eléctricos de alta calidad y servicio excepcional. Nuestro compromiso es satisfacer las necesidades de nuestros clientes con productos duraderos y confiables. ¡Visítenos hoy mismo y descubra por qué somos la elección número uno para sus necesidades eléctricas en la región!
+</p>
+
+<div class="grid grid-cols-2 md:grid-cols-3 gap-5 mt-10 md:max-w-[90%] mx-auto">
+    <Gallery image="public/gallery/gallery1.jpg" />
+    <Gallery image="public/gallery/gallery2.jpg" />
+    <Gallery image="public/gallery/gallery3.jpg" />
+    <Gallery image="public/gallery/gallery4.jpg" />
+    <Gallery image="public/gallery/gallery5.jpg" />
+    <Gallery image="public/gallery/gallery6.jpg" />
+</div>
+
+<div class="min-h-18 md:max-w-[60%] relative bg-[#25D366] text-center text-gray-700 mt-10 rounded-lg shadow-lg flex items-center justify-center mx-auto">
+    <a href="https://wa.me/+573174353902?text=Hola" target="_blank" style="display:inline-block; background-color:#25d366; color:#FFF; padding:10px 20px; border-radius:5px; text-align:center; text-decoration:none; font-size:20px;">
+        <div class="flex items-center gap-3 hover:scale-110 hover:font-bold transition-transform duration-300">
+            <i class="fa fa-whatsapp"></i> Envíanos un mensaje
+        </div>
+    </a>
+</div>
+
+
+<h2 class="text-center text-orange-400 text-lg font-black uppercase mt-10">
+    nos respaldan 
+    <span class="block text-orange-500 text-3xl mt-3">las mejores marcas</span>
+</h2>
+
+<div class="grid grid-cols-2 md:grid-cols-6 gap-10 mt-10 md:max-w-[90%] mx-auto">
+    <Marcas icon="schneider-icon.jpg" marca="Schneider" />
+    <Marcas icon="centelsa-icon.jpg" marca="Centelsa" />
+    <Marcas icon="pavco-icon.jpg" marca="Pavco" />
+    <Marcas icon="3m-icon.jpg" marca="3M" />
+    <Marcas icon="ciles-icon.jpg" marca="Ciles" />
+    <Marcas icon="legrand-icon.jpg" marca="Legrand" />
+</div>
+
+<p class="text-center text-gray-700 text-lg mt-10 max-w-2xl mx-auto">
+    Tenemos sede en Buenaventura - Valle del Cauca y Yarumal Antioquia. ¡Contáctenos hoy mismo para obtener más información sobre nuestros productos y servicios!
+</p>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10 md:max-w-[90%] mx-auto">
+    <video controls class="w-full rounded-lg overflow-hidden">
+        <source src="reel1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls class="w-full rounded-lg overflow-hidden">
+        <source src="reel2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
 </Layout>
