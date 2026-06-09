@@ -1,0 +1,56 @@
+[
+  {
+    "imagen": "/inventario/cables/comunicaciones/3031.jpg",
+    "codigo": "3031",
+    "nombre": "Cable UTP Cat6 Interior",
+    "marca": "Titanium / Mercury"
+  },
+  {
+    "imagen": "/inventario/cables/comunicaciones/1932.jpg",
+    "codigo": "1932",
+    "nombre": "Cable UTP Cat6 100% COBRE",
+    "marca": "AltaLink"
+  },
+  {
+    "imagen": "/inventario/cables/comunicaciones/246.jpg",
+    "codigo": "246",
+    "nombre": "Cable UTP Cat6A 100% COBRE",
+    "marca": "Commscope"
+  },
+  {
+    "imagen": "/inventario/cables/comunicaciones/1911.jpg",
+    "codigo": "1911",
+    "nombre": "Cable UTP Cat6 Exterior",
+    "marca": "888 plus"
+  },
+  {
+    "imagen": "/inventario/cables/comunicaciones/2057.jpg",
+    "codigo": "2057",
+    "nombre": "Cable Coaxial RG6 95%",
+    "marca": "Mercury"
+  },
+  {
+    "imagen": "/inventario/cables/comunicaciones/210.jpg",
+    "codigo": "210",
+    "nombre": "Cable Coaxial RG6 60%",
+    "marca": "KEIBOL"
+  },
+  {
+    "imagen": "/inventario/cables/comunicaciones/2320.jpg",
+    "codigo": "2320",
+    "nombre": "Patch Cord UTP Cat6 1 Metro",
+    "marca": "Voltio"
+  },
+  {
+    "imagen": "/inventario/cables/comunicaciones/2322.jpg",
+    "codigo": "2322",
+    "nombre": "Patch Cord UTP Cat6 3 Metro",
+    "marca": "Voltio"
+  },
+  {
+    "imagen": "/inventario/cables/comunicaciones/2323.jpg",
+    "codigo": "2323",
+    "nombre": "Patch Cord UTP Cat6 5 Metro",
+    "marca": "Voltio"
+  }
+]

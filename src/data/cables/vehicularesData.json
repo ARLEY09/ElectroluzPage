@@ -1,0 +1,44 @@
+[
+  {
+    "imagen": "/inventario/cables/vehiculares/250.jpg",
+    "codigo": "250",
+    "nombre": "Cable Vehicular 18 AWG",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/vehiculares/249.jpg",
+    "codigo": "249",
+    "nombre": "Cable Vehicular 16 AWG",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/vehiculares/248.jpg",
+    "codigo": "248",
+    "nombre": "Cable Vehicular 14 AWG",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/vehiculares/1454.jpg",
+    "codigo": "1454",
+    "nombre": "Cable Vehicular 12 AWG",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/vehiculares/1456.jpg",
+    "codigo": "1456",
+    "nombre": "Cable Vehicular 10 AWG",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/vehiculares/1455.jpg",
+    "codigo": "1455",
+    "nombre": "Cable Vehicular 8 AWG",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/vehiculares/2712-1.jpg",
+    "codigo": "2712-1",
+    "nombre": "Cable Vehicular 6 AWG",
+    "marca": "Centelsa"
+  }
+]

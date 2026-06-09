@@ -2,8 +2,8 @@
 import Logo from "@/assets/logo.svg";
 import Layout from '../layouts/Layout.astro';
 import bg from '../assets/bg-home.jpg';
-import Marcas from "@/components/Marcas.astro";
-import Gallery from "@/components/Gallery.astro"; 
+import Marcas from "@/components/ui/Marcas.astro";
+import Gallery from "@/components/ui/Gallery.astro"; 
 ---
 
 
@@ -32,8 +32,8 @@ import Gallery from "@/components/Gallery.astro";
     <Gallery image="public/gallery/gallery6.jpg" />
 </div>
 
-<div class="min-h-18 md:max-w-[60%] relative bg-[#25D366] text-center text-gray-700 mt-10 rounded-lg shadow-lg flex items-center justify-center mx-auto">
-    <a href="https://wa.me/+573174353902?text=Hola" target="_blank" style="display:inline-block; background-color:#25d366; color:#FFF; padding:10px 20px; border-radius:5px; text-align:center; text-decoration:none; font-size:20px;">
+<div class="min-h-18 md:max-w-[60%] relative bg-[#25D366] text-center text-gray-700 mt-10 rounded-lg shadow-lg flex items-center justify-center mx-auto hover:scale-105 hover:bg-[#128C7E] transition-transform duration-300">
+    <a href="https://wa.me/+573174353902?text=Hola" target="_blank" style="display:inline-block;  color:#FFF; padding:10px 20px; border-radius:5px; text-align:center; text-decoration:none; font-size:20px;">
         <div class="flex items-center gap-3 hover:scale-110 hover:font-bold transition-transform duration-300">
             <i class="fa fa-whatsapp"></i> Envíanos un mensaje
         </div>

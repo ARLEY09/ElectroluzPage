@@ -1,0 +1,20 @@
+---
+import '@/styles/global.css';
+
+const CablesNavigation = [
+    { name: 'ALAMBRES', href: '/Cables/Alambres' },
+    { name: 'CABLES 7HILOS', href: '/Cables/SieteHilos' },
+    { name: 'DUPLEX', href: '/Cables/Duplex' },
+    { name: 'ENCAUCHETADOS', href: '/Cables/Encauchetados' },
+    { name: 'VEHICULARES', href: '/Cables/Vehiculares' },
+    { name: 'COMUNICACIONES', href: '/Cables/Comunicaciones' }
+];
+---
+
+<nav class="flex flex-col items-center lg:flex-row gap-5">
+    {CablesNavigation.map(item => 
+        <a href={item.href} class="uppercase text-lg font-bold text-gray-700 hover:text-orange-400 hover:scale-105 transition-colors">
+            {item.name}
+        </a>
+    )}
+</nav>

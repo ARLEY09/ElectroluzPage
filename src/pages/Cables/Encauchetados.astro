@@ -1,0 +1,23 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import bg from '@/assets/bg-cables.jpg';
+import CablesNavigation from '@/components/CategoriasProductos/CablesNav.astro';
+import Producto from '@/components/ui/Producto.astro';
+import ListaProductos from '@/data/cables/encauchetadosData.json';
+
+---
+
+<Layout
+    title='Cables'
+    bgImage={bg.src}
+    subtitle='COMPRE CABLE 100% ORIGINAL'
+>
+
+<div class="flex flex-col items-center mx-auto max-w-7xl mb-10">
+    <CablesNavigation class="3xl"/>
+</div>
+
+<Producto ListaProductos={ListaProductos}/>
+
+
+</Layout>

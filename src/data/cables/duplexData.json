@@ -1,0 +1,65 @@
+[
+  {
+    "imagen": "/inventario/cables/duplex/3006.jpg",
+    "codigo": "3006",
+    "nombre": "Cable Duplex 2x18",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/duplex/217.jpg",
+    "codigo": "217",
+    "nombre": "Cable Duplex 2x16",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/duplex/216.jpg",
+    "codigo": "216",
+    "nombre": "Cable Duplex 2x14",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/duplex/215.jpg",
+    "codigo": "215",
+    "nombre": "Cable Duplex 2x12",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/duplex/214.jpg",
+    "codigo": "214",
+    "nombre": "Cable Duplex 2x10",
+    "marca": "Centelsa"
+  },
+
+
+
+  {
+    "imagen": "/inventario/cables/duplex/270.jpg",
+    "codigo": "270",
+    "nombre": "Cable Bafle 2x24",
+    "marca": "WELSPEC"
+  },
+  {
+    "imagen": "/inventario/cables/duplex/2740-1.jpg",
+    "codigo": "2740-1",
+    "nombre": "Cable Bafle 2x20",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/duplex/176.jpg",
+    "codigo": "176",
+    "nombre": "Cable Bafle 2x18",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/duplex/175.jpg",
+    "codigo": "175",
+    "nombre": "Cable Bafle 2x16",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/duplex/174.jpg",
+    "codigo": "174",
+    "nombre": "Cable Bafle 2x14",
+    "marca": "Centelsa"
+  }
+]

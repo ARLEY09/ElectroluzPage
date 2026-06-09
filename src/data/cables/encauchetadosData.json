@@ -1,0 +1,96 @@
+[
+  {
+    "imagen": "/inventario/cables/encauchetados/224.jpg",
+    "codigo": "224",
+    "nombre": "Cable Encauchetado 2x18",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/encauchetados/223.jpg",
+    "codigo": "223",
+    "nombre": "Cable Encauchetado 2x16",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/encauchetados/222.jpg",
+    "codigo": "222",
+    "nombre": "Cable Encauchetado 2x14",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/encauchetados/221.jpg",
+    "codigo": "221",
+    "nombre": "Cable Encauchetado 2x12",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/encauchetados/220.jpg",
+    "codigo": "220",
+    "nombre": "Cable Encauchetado 2x10",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/encauchetados/1811.jpg",
+    "codigo": "1811",
+    "nombre": "Cable Encauchetado 2x8",
+    "marca": "Centelsa"
+  },
+
+
+  {
+    "imagen": "/inventario/cables/encauchetados/229.jpg",
+    "codigo": "229",
+    "nombre": "Cable Encauchetado 3x18",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/encauchetados/228.jpg",
+    "codigo": "228",
+    "nombre": "Cable Encauchetado 3x16",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/encauchetados/227.jpg",
+    "codigo": "227",
+    "nombre": "Cable Encauchetado 3x14",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/encauchetados/226.jpg",
+    "codigo": "226",
+    "nombre": "Cable Encauchetado 3x12",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/encauchetados/225.jpg",
+    "codigo": "225",
+    "nombre": "Cable Encauchetado 3x10",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/encauchetados/1813.jpg",
+    "codigo": "1813",
+    "nombre": "Cable Encauchetado 3x8",
+    "marca": "Centelsa"
+  },
+
+
+  {
+    "imagen": "/inventario/cables/encauchetados/231.jpg",
+    "codigo": "231",
+    "nombre": "Cable Encauchetado 4x18",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/encauchetados/230.jpg",
+    "codigo": "230",
+    "nombre": "Cable Encauchetado 4x16",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/encauchetados/1416.jpg",
+    "codigo": "1416",
+    "nombre": "Cable Encauchetado 4x14",
+    "marca": "Centelsa"
+  }
+]

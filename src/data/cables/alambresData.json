@@ -1,0 +1,152 @@
+[
+  {
+    "imagen": "/inventario/cables/alambres/36.jpg",
+    "codigo": "36",
+    "nombre": "Alambre 14 Amarillo",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/37.jpg",
+    "codigo": "37",
+    "nombre": "Alambre 14 Azul",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/38.jpg",
+    "codigo": "38",
+    "nombre": "Alambre 14 Blanco",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/39.jpg",
+    "codigo": "39",
+    "nombre": "Alambre 14 Negro",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/40.jpg",
+    "codigo": "40",
+    "nombre": "Alambre 14 Rojo",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/41.jpg",
+    "codigo": "41",
+    "nombre": "Alambre 14 Verde",
+    "marca": "Centelsa"
+  },
+
+
+  {
+    "imagen": "/inventario/cables/alambres/30.jpg",
+    "codigo": "30",
+    "nombre": "Alambre 12 Amarillo",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/31.jpg",
+    "codigo": "31",
+    "nombre": "Alambre 12 Azul",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/32.jpg",
+    "codigo": "32",
+    "nombre": "Alambre 12 Blanco",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/33.jpg",
+    "codigo": "33",
+    "nombre": "Alambre 12 Negro",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/34.jpg",
+    "codigo": "34",
+    "nombre": "Alambre 12 Rojo",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/35.jpg",
+    "codigo": "35",
+    "nombre": "Alambre 12 Verde",
+    "marca": "Centelsa"
+  },
+
+
+  {
+    "imagen": "/inventario/cables/alambres/24.jpg",
+    "codigo": "24",
+    "nombre": "Alambre 10 Amarillo",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/25.jpg",
+    "codigo": "25",
+    "nombre": "Alambre 10 Azul",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/26.jpg",
+    "codigo": "26",
+    "nombre": "Alambre 10 Blanco",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/27.jpg",
+    "codigo": "27",
+    "nombre": "Alambre 10 Negro",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/28.jpg",
+    "codigo": "28",
+    "nombre": "Alambre 10 Rojo",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/29.jpg",
+    "codigo": "29",
+    "nombre": "Alambre 10 Verde",
+    "marca": "Centelsa"
+  },
+
+
+  {
+    "imagen": "/inventario/cables/alambres/42.jpg",
+    "codigo": "42",
+    "nombre": "Alambre 8 Amarillo",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/43.jpg",
+    "codigo": "43",
+    "nombre": "Alambre 8 Azul",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/44.jpg",
+    "codigo": "44",
+    "nombre": "Alambre 8 Blanco",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/45.jpg",
+    "codigo": "45",
+    "nombre": "Alambre 8 Negro",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/46.jpg",
+    "codigo": "46",
+    "nombre": "Alambre 8 Rojo",
+    "marca": "Centelsa"
+  },
+  {
+    "imagen": "/inventario/cables/alambres/47.jpg",
+    "codigo": "47",
+    "nombre": "Alambre 8 Verde",
+    "marca": "Centelsa"
+  }
+]
