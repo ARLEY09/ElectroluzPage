@@ -1,7 +1,13 @@
+---
+interface Props {
+    image: string;
+}
+const { image } = Astro.props;
+---
 
 <div class="w-full max-h-64 md:h-54 rounded-lg overflow-hidden shadow-lg">
     <img 
-    src="page-404.jpg" 
+    src={image} 
     alt='Imagen de galería' 
     class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
     />
