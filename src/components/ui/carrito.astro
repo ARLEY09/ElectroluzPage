@@ -2,191 +2,168 @@
 import "@/styles/carrito.css";
 ---
 
-<!-- Botón -->
-<button id="btnCarrito" class="btn-carrito"> 🛒 </button>
+<button id="btnCarrito" class="btn-carrito">🛒</button>
 
-<!-- Popup -->
 <div id="carritoPopup" class="carrito-popup md:min-w-[500px]">
-    <div id="carrito">
-        <table id="lista-carrito" class="u-full-width">
-            <thead>
-                <tr>
-                    <th class="md:min-w-[100px] mr-100">Imagen</th>
-                    <th>Codigo</th>
-                    <th class="md:min-w-[150px]">Nombre</th>
-                    <th>Marca</th>
-                    <th>Cantidad</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody class="text-center center-items"></tbody>
-        </table>
+  <div id="carrito">
+    <table id="lista-carrito" class="u-full-width">
+      <thead>
+        <tr>
+          <th>Imagen</th>
+          <th>Codigo</th>
+          <th>Nombre</th>
+          <th>Marca</th>
+          <th>Cantidad</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="text-center"></tbody>
+    </table>
 
-        <div
-            class="min-h-10 relative bg-[#128C7E] text-center text-gray-700 mt-3 rounded-lg shadow-lg flex items-center justify-center mx-auto hover:scale-105 hover:bg-[#25D366] transition-transform duration-300"
-        >
-            <a
-                href={`https://wa.me/+573174353902?text=Hola, quisiera saber disponibilidad y precio de: {producto.codigo}`}
-                target="_blank"
-                style="display:inline-block;  color:#FFF; padding:5px 20px; border-radius:5px; text-align:center; text-decoration:none; font-size:16px;"
-            >
-                <div
-                    class="flex items-center gap-3 hover:scale-105 transition-transform duration-300"
-                >
-                    <i class="fa fa-whatsapp"></i> COTIZAR PRODUCTOS
-                </div>
-            </a>
+    <div class="min-h-10 bg-[#128C7E] mt-3 rounded-lg flex items-center justify-center hover:scale-105 hover:bg-[#25D366] transition">
+      <a id="btnWhatsApp" href="#" target="_blank" class="text-white py-2 px-5">
+        <div class="flex items-center gap-2">
+          <i class="fa fa-whatsapp"></i> COTIZAR PRODUCTOS
         </div>
-
-        <a href="#" id="vaciar-carrito" class="button"> Vaciar Carrito </a>
+      </a>
     </div>
+
+    <a href="#" id="vaciar-carrito" class="button">Vaciar Carrito</a>
+  </div>
 </div>
 
 <script>
-    const btn = document.getElementById("btnCarrito");
-    const popup = document.getElementById("carritoPopup");
+document.addEventListener("DOMContentLoaded", () => {
 
-    if (btn && popup) {
-        btn.addEventListener("click", () => {
-            popup.classList.toggle("active");
+  const btn = document.getElementById("btnCarrito");
+  const popup = document.getElementById("carritoPopup");
+
+  const carrito = document.querySelector("#carrito");
+  const listaProductos = document.querySelector("#listaProductos");
+  const contenedorCarrito = document.querySelector("#lista-carrito tbody");
+  const vaciarCarritoBtn = document.querySelector("#vaciar-carrito");
+  const btnWhatsApp = document.getElementById("btnWhatsApp");
+
+  let articulosCarrito = [];
+
+  // ================= UI =================
+  if (btn && popup) {
+    btn.addEventListener("click", () => {
+      popup.classList.toggle("active");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!popup.contains(e.target) && !btn.contains(e.target)) {
+        popup.classList.remove("active");
+      }
+    });
+  }
+
+  // ================= EVENTS =================
+  if (listaProductos) {
+    listaProductos.addEventListener("click", agregarProducto);
+  }
+
+  if (carrito) {
+    carrito.addEventListener("click", eliminarProducto);
+  }
+
+  if (vaciarCarritoBtn) {
+    vaciarCarritoBtn.addEventListener("click", vaciarCarrito);
+  }
+
+  // ================= LOGICA =================
+
+  function agregarProducto(e) {
+    e.preventDefault();
+
+    if (e.target.classList.contains("agregar-carrito")) {
+      const producto = e.target.parentElement.parentElement.parentElement;
+
+      const infoProducto = {
+        imagen: producto.querySelector("img").src,
+        nombre: producto.querySelector(".nombreP").textContent,
+        marca: producto.querySelector(".marcaP").textContent,
+        codigo: producto.querySelector(".codigoP").textContent,
+        cantidad: 1,
+      };
+
+      const existe = articulosCarrito.some(p => p.codigo === infoProducto.codigo);
+
+      if (existe) {
+        articulosCarrito = articulosCarrito.map(p => {
+          if (p.codigo === infoProducto.codigo) {
+            p.cantidad++;
+          }
+          return p;
         });
+      } else {
+        articulosCarrito.push(infoProducto);
+      }
 
-        document.addEventListener("click", (e) => {
-            const target = e.target as Node;
-
-            if (!popup.contains(target) && !btn.contains(target)) {
-                popup.classList.remove("active");
-            }
-        });
+      renderCarrito();
     }
-</script>
+  }
 
-<script>
-    import { any } from "astro:schema";
+  function eliminarProducto(e) {
+    e.preventDefault();
 
-    // Variables
-    const carrito = document.querySelector("#carrito");
-    const listaProductos = document.querySelector("#listaProductos");
-    const contenedorCarrito = document.querySelector("#lista-carrito tbody");
-    const vaciarCarritoBtn = document.querySelector("#vaciar-carrito");
-    let articulosCarrito = [];
+    if (e.target.classList.contains("borrar-producto")) {
+      const codigo = e.target.getAttribute("data-id");
 
-    // Listeners
-    cargarEventListeners();
+      articulosCarrito = articulosCarrito.filter(p => p.codigo !== codigo);
 
-    function cargarEventListeners() {
-        // Dispara cuando se presiona "Agregar Carrito"
-        if (listaProductos) {
-            listaProductos.addEventListener("click", agregarProducto);
-        }
-
-        // Cuando se elimina un curso del carrito
-        if (carrito) {
-            carrito.addEventListener("click", eliminarProducto);
-        }
-
-        // Al Vaciar el carrito
-        if (vaciarCarritoBtn) {
-            vaciarCarritoBtn.addEventListener("click", vaciarCarrito);
-        }
+      renderCarrito();
     }
+  }
 
-    // Funciones
-    // Función que añade el curso al carrito
-    function agregarProducto(e) {
-        e.preventDefault();
-        // Delegation para agregar-carrito
-        if (e.target.classList.contains("agregar-carrito")) {
-            const Producto = e.target.parentElement.parentElement.parentElement;
-            // Enviamos el curso seleccionado para tomar sus datos
-            leerDatosProducto(Producto);
-        }
-    }
+  function renderCarrito() {
+    contenedorCarrito.innerHTML = "";
 
-    // Lee los datos del curso
-    function leerDatosProducto(Producto) {
-        const infoProducto = {
-            imagen: Producto.querySelector("img").src,
-            nombre: Producto.querySelector(".nombreP").textContent,
-            marca: Producto.querySelector(".marcaP").textContent,
-            codigo: Producto.querySelector(".codigoP").textContent,
-            cantidad: 1,
-        };
+    articulosCarrito.forEach(p => {
+      const row = document.createElement("tr");
 
-        if (
-            articulosCarrito.some(
-                (Producto) => Producto.codigo === infoProducto.codigo,
-            )
-        ) {
-            const Productos = articulosCarrito.map((Producto) => {
-                if (Producto.codigo === infoProducto.codigo) {
-                    Producto.cantidad++;
-                    return Producto;
-                } else {
-                    return Producto;
-                }
-            });
-            articulosCarrito = [...Productos];
-        } else {
-            articulosCarrito = [...articulosCarrito, infoProducto];
-        }
+      row.innerHTML = `
+        <td><img src="${p.imagen}" width="80"></td>
+        <td>${p.codigo}</td>
+        <td>${p.nombre}</td>
+        <td>${p.marca}</td>
+        <td class="text-center">${p.cantidad}</td>
+        <td>
+          <a href="#" class="borrar-producto text-red-500 font-bold" data-id="${p.codigo}">X</a>
+        </td>
+      `;
 
-        // console.log(articulosCarrito)
+      contenedorCarrito.appendChild(row);
+    });
 
-        // console.log(articulosCarrito)
-        carritoHTML();
+    actualizarWhatsApp();
+  }
+
+  function vaciarCarrito(e) {
+    if (e) e.preventDefault();
+
+    articulosCarrito = [];
+    contenedorCarrito.innerHTML = "";
+    actualizarWhatsApp();
+  }
+
+  function actualizarWhatsApp() {
+    if (!btnWhatsApp) return;
+
+    if (articulosCarrito.length === 0) {
+      btnWhatsApp.href = "#";
+      return;
     }
 
-    // Elimina el curso del carrito en el DOM
-    function eliminarProducto(e) {
-        console.log("Click en eliminar producto");
-        e.preventDefault();
-        if (e.target.classList.contains("borrar-producto")) {
-            console.log("Clase borrar producto detectada");
-            // e.target.parentElement.parentElement.remove();
-            const productoCodigo = e.target.getAttribute("data-id");
-            console.log("Tratas de eliminar el producto" + productoCodigo);
+    const mensaje = articulosCarrito
+      .map(p => `${p.nombre} (${p.codigo}) x${p.cantidad}`)
+      .join(", ");
 
-            // Eliminar del arreglo del carrito
-            articulosCarrito = articulosCarrito.filter(
-                (Producto) => Producto.codigo !== productoCodigo,
-            );
+    btnWhatsApp.href =
+      "https://wa.me/573174353902?text=" +
+      encodeURIComponent("Hola, quisiera saber disponibilidad y precio de: " + mensaje);
+  }
 
-            carritoHTML();
-        }
-    }
-
-    // Muestra el curso seleccionado en el Carrito
-    function carritoHTML() {
-        vaciarCarrito();
-
-        articulosCarrito.forEach((Producto) => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-               <td>  
-                    <img src="${Producto.imagen}" width=100>
-               </td>
-               <td>${Producto.codigo}</td>
-               <td>${Producto.nombre}</td>
-               <td>${Producto.marca}</td>
-               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                ${Producto.cantidad} </td>
-                <td>
-                    <a href="#" class="borrar-producto text-lg font-bold text-red-500" data-id="${Producto.codigo}">X</a>
-               </td>
-          `;
-            contenedorCarrito.appendChild(row);
-        });
-    }
-
-    // Elimina los cursos del carrito en el DOM
-    function vaciarCarrito() {
-        // forma lenta
-        // contenedorCarrito.innerHTML = '';
-
-        // forma rapida (recomendada)
-        while (contenedorCarrito.firstChild) {
-            contenedorCarrito.removeChild(contenedorCarrito.firstChild);
-        }
-    }
+});
 </script>
