@@ -1,0 +1,56 @@
+  /* Botón flotante */
+  .btn-carrito {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #FFFFFF;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  /* Ventana del carrito */
+  .carrito-popup {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    width: 400px;
+    max-height: 400px;
+    overflow-y: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    padding: 15px;
+    display: none;
+    z-index: 1000;
+  }
+
+  .carrito-popup.active {
+    display: block;
+  }
+
+  table {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 5px;
+    text-align: left;
+  }
+
+  .button {
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    background: #ff4d4d;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
