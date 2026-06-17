@@ -20,12 +20,10 @@ import "@/styles/carrito.css";
       <tbody class="text-center"></tbody>
     </table>
 
-    <div class="min-h-10 bg-[#128C7E] mt-3 rounded-lg flex items-center justify-center hover:scale-105 hover:bg-[#25D366] transition">
-      <a id="btnWhatsApp" href="#" target="_blank" class="text-white py-2 px-5">
-        <div class="flex items-center gap-2">
-          <i class="fa fa-whatsapp"></i> COTIZAR PRODUCTOS
-        </div>
-      </a>
+    <div
+      class="min-h-10 bg-[#128C7E] mt-3 rounded-lg flex items-center justify-center hover:scale-105 hover:bg-[#25D366] transition"
+    >
+      <button id="btnWhatsApp">Enviar a WhatsApp</button>
     </div>
 
     <a href="#" id="vaciar-carrito" class="button">Vaciar Carrito</a>
@@ -33,97 +31,98 @@ import "@/styles/carrito.css";
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("btnCarrito");
+    const popup = document.getElementById("carritoPopup");
 
-  const btn = document.getElementById("btnCarrito");
-  const popup = document.getElementById("carritoPopup");
+    const carrito = document.querySelector("#carrito");
+    const listaProductos = document.querySelector("#listaProductos");
+    const contenedorCarrito = document.querySelector("#lista-carrito tbody");
+    const vaciarCarritoBtn = document.querySelector("#vaciar-carrito");
+    const btnWhatsApp = document.getElementById("btnWhatsApp");
 
-  const carrito = document.querySelector("#carrito");
-  const listaProductos = document.querySelector("#listaProductos");
-  const contenedorCarrito = document.querySelector("#lista-carrito tbody");
-  const vaciarCarritoBtn = document.querySelector("#vaciar-carrito");
-  const btnWhatsApp = document.getElementById("btnWhatsApp");
+    let articulosCarrito = [];
 
-  let articulosCarrito = [];
+    // ================= UI =================
+    if (btn && popup) {
+      btn.addEventListener("click", () => {
+        popup.classList.toggle("active");
+      });
 
-  // ================= UI =================
-  if (btn && popup) {
-    btn.addEventListener("click", () => {
-      popup.classList.toggle("active");
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!popup.contains(e.target) && !btn.contains(e.target)) {
-        popup.classList.remove("active");
-      }
-    });
-  }
-
-  // ================= EVENTS =================
-  if (listaProductos) {
-    listaProductos.addEventListener("click", agregarProducto);
-  }
-
-  if (carrito) {
-    carrito.addEventListener("click", eliminarProducto);
-  }
-
-  if (vaciarCarritoBtn) {
-    vaciarCarritoBtn.addEventListener("click", vaciarCarrito);
-  }
-
-  // ================= LOGICA =================
-
-  function agregarProducto(e) {
-    e.preventDefault();
-
-    if (e.target.classList.contains("agregar-carrito")) {
-      const producto = e.target.parentElement.parentElement.parentElement;
-
-      const infoProducto = {
-        imagen: producto.querySelector("img").src,
-        nombre: producto.querySelector(".nombreP").textContent,
-        marca: producto.querySelector(".marcaP").textContent,
-        codigo: producto.querySelector(".codigoP").textContent,
-        cantidad: 1,
-      };
-
-      const existe = articulosCarrito.some(p => p.codigo === infoProducto.codigo);
-
-      if (existe) {
-        articulosCarrito = articulosCarrito.map(p => {
-          if (p.codigo === infoProducto.codigo) {
-            p.cantidad++;
-          }
-          return p;
-        });
-      } else {
-        articulosCarrito.push(infoProducto);
-      }
-
-      renderCarrito();
+      document.addEventListener("click", (e) => {
+        if (!popup.contains(e.target) && !btn.contains(e.target)) {
+          popup.classList.remove("active");
+        }
+      });
     }
-  }
 
-  function eliminarProducto(e) {
-    e.preventDefault();
-
-    if (e.target.classList.contains("borrar-producto")) {
-      const codigo = e.target.getAttribute("data-id");
-
-      articulosCarrito = articulosCarrito.filter(p => p.codigo !== codigo);
-
-      renderCarrito();
+    // ================= EVENTS =================
+    if (listaProductos) {
+      listaProductos.addEventListener("click", agregarProducto);
     }
-  }
 
-  function renderCarrito() {
-    contenedorCarrito.innerHTML = "";
+    if (carrito) {
+      carrito.addEventListener("click", eliminarProducto);
+    }
 
-    articulosCarrito.forEach(p => {
-      const row = document.createElement("tr");
+    if (vaciarCarritoBtn) {
+      vaciarCarritoBtn.addEventListener("click", vaciarCarrito);
+    }
 
-      row.innerHTML = `
+    // ================= LOGICA =================
+
+    function agregarProducto(e) {
+      e.preventDefault();
+
+      if (e.target.classList.contains("agregar-carrito")) {
+        const producto = e.target.parentElement.parentElement.parentElement;
+
+        const infoProducto = {
+          imagen: producto.querySelector("img").src,
+          nombre: producto.querySelector(".nombreP").textContent,
+          marca: producto.querySelector(".marcaP").textContent,
+          codigo: producto.querySelector(".codigoP").textContent,
+          cantidad: 1,
+        };
+
+        const existe = articulosCarrito.some(
+          (p) => p.codigo === infoProducto.codigo,
+        );
+
+        if (existe) {
+          articulosCarrito = articulosCarrito.map((p) => {
+            if (p.codigo === infoProducto.codigo) {
+              p.cantidad++;
+            }
+            return p;
+          });
+        } else {
+          articulosCarrito.push(infoProducto);
+        }
+
+        renderCarrito();
+      }
+    }
+
+    function eliminarProducto(e) {
+      e.preventDefault();
+
+      if (e.target.classList.contains("borrar-producto")) {
+        const codigo = e.target.getAttribute("data-id");
+
+        articulosCarrito = articulosCarrito.filter((p) => p.codigo !== codigo);
+
+        renderCarrito();
+      }
+    }
+
+    function renderCarrito() {
+      contenedorCarrito.innerHTML = "";
+
+      articulosCarrito.forEach((p) => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
         <td><img src="${p.imagen}" width="80"></td>
         <td>${p.codigo}</td>
         <td>${p.nombre}</td>
@@ -134,36 +133,79 @@ document.addEventListener("DOMContentLoaded", () => {
         </td>
       `;
 
-      contenedorCarrito.appendChild(row);
-    });
+        contenedorCarrito.appendChild(row);
+      });
 
-    actualizarWhatsApp();
-  }
-
-  function vaciarCarrito(e) {
-    if (e) e.preventDefault();
-
-    articulosCarrito = [];
-    contenedorCarrito.innerHTML = "";
-    actualizarWhatsApp();
-  }
-
-  function actualizarWhatsApp() {
-    if (!btnWhatsApp) return;
-
-    if (articulosCarrito.length === 0) {
-      btnWhatsApp.href = "#";
-      return;
+      actualizarWhatsApp();
     }
 
-    const mensaje = articulosCarrito
-      .map(p => `${p.nombre} (${p.codigo}) x${p.cantidad}`)
-      .join(", ");
+    function vaciarCarrito(e) {
+      if (e) e.preventDefault();
 
-    btnWhatsApp.href =
-      "https://wa.me/573174353902?text=" +
-      encodeURIComponent("Hola, quisiera saber disponibilidad y precio de: " + mensaje);
-  }
+      articulosCarrito = [];
+      contenedorCarrito.innerHTML = "";
+      actualizarWhatsApp();
+    }
 
-});
+
+
+    function actualizarWhatsApp() {
+      console.log("Actualizando WhatsApp con:", articulosCarrito);
+
+      if (!btnWhatsApp) return;
+
+      if (articulosCarrito.length === 0) {
+        btnWhatsApp.href = "#";
+        return;
+      }
+      console.log("Verificando articulos para WhatsApp:");
+
+      const mensaje = articulosCarrito
+        .join("Hola, quisiera saber disponibilidad y precio de: ")
+        .map((p) => `(${p.codigo}) ${p.nombre} x${p.cantidad}`)
+        .join("%0A ");
+
+      console.log("Concatenando mensaje para WhatsApp:", mensaje);
+
+      btnWhatsApp.href =
+        "https://wa.me/573174353902?text=" +
+        encodeURIComponent(
+          "Hola, quisiera saber disponibilidad y precio de: " + mensaje,
+        );
+      console.log("Boton para enviar cotizacion");
+    }
+
+    const boton = document.getElementById("btnWhatsApp");
+
+    // 4. Evento click
+    boton.addEventListener("click", function () {
+
+      console.log("Actualizando WhatsApp con:", articulosCarrito);
+
+      if (!btnWhatsApp) return;
+
+      if (articulosCarrito.length === 0) {
+        btnWhatsApp.href = "#";
+        return;
+      }
+      console.log("Verificando articulos para WhatsApp:");
+
+      const mensaje = articulosCarrito
+        .map((p) => `*[${p.codigo}]* ${p.nombre}:  *${p.cantidad}*`)
+        .join("%0A");
+
+      console.log("Concatenando mensaje para WhatsApp:", mensaje);
+
+
+
+      // 5. Codificamos el mensaje para URL
+      const mensajeCodificado = encodeURIComponent(mensaje);
+
+      // 6. Creamos el enlace de WhatsApp
+      const url = `https://wa.me/573174353902?text=Hola, quisiera saber disponibilidad y precio de:%0A${mensaje}`;
+
+      // 7. Abrimos WhatsApp
+      window.open(url, "_blank");
+    });
+  });
 </script>

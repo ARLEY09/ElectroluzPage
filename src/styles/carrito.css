@@ -54,3 +54,20 @@
     border-radius: 5px;
     text-decoration: none;
   }
+
+  .contador-carrito {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;              /* 🔥 IMPORTANTE */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;              /* 🔥 CLAVE */
+}
